@@ -1,3 +1,7 @@
+```
+NAME:JANANI.S
+REG NO:212222230049
+```
 # Experiment 05 Implementation of flipflops using verilog
 ### AIM: 
 To implement all the flipflops using verilog and validating their functionality using their functional tables
@@ -167,30 +171,55 @@ qbar=((~j)&qbar)|(k &(~qbar));
 end 
 endmodule
 ```
+### D FLIP_FLOP
+```
+module dflipflop(d,clk,q,qbar); 
+input d,clk; 
+output reg q; 
+output reg qbar; 
+initial q=0;
+initial qbar=1; 
+always @(posedge clk) 
+begin 
+q=d; 
+qbar=~q; 
+end 
+endmodule
+```
+### T FLIP-FLOP:
+```
+module t(T,clk,q,qbar);
+input T,clk;
+output reg q;
+output reg qbar;
+initial q=0;
+initial qbar=1;
+always @ (posedge clk)
+begin
+q=(T&(~q))|((~T)&q);
+qbar=(~q);
+end
+endmodule
+```
 ### RTL DIAGRAMS:
 #### SR FLIP-FLIP:
 ![flipflop rtl](https://github.com/JananiSoundararajan/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119477549/285e7eac-0596-4d96-8d7e-95fa07c0f16b)
 #### JK FLIP-FLOP:
 ![jkrtl](https://github.com/JananiSoundararajan/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119477549/de1af3bc-cf71-490d-8748-16ccf2e2859f)
-
-
-
-
-
-
-
-
+#### D FLIP-FLOP:
+![drtl](https://github.com/JananiSoundararajan/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119477549/a28e53f7-02ab-4c55-9fa4-04201555f6dd)
+#### T FLIP-FLOP:
+![trtl](https://github.com/JananiSoundararajan/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119477549/7501ca73-591c-4ee5-bbb4-9b65eecc204f)
 
 ### OUTPUT WAVEFORMS:
 #### SR FLIP-FLOP:
 ![flipflopwvf](https://github.com/JananiSoundararajan/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119477549/411b9785-f797-4bc8-934f-9453e1c3dce1)
 #### JK FLIP-FLOP:
 ![JKWVF](https://github.com/JananiSoundararajan/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119477549/686385bb-339b-4c90-9494-4a35ba16ade3)
+#### D FLIP-FLOP:
+![dwf](https://github.com/JananiSoundararajan/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119477549/749f64f3-05a6-4a88-b7be-f541229d2452)
+#### T FLIP-FLOP:
+![twvf](https://github.com/JananiSoundararajan/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119477549/d6b0a302-324b-4fce-a333-60c99260a563)
 
-
-
-
-
-
-
-### RESULTS 
+### RESULTS: 
+      All the flipflops are implemented using verilog and their functionality has been validated using their functional tables.
